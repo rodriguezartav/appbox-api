@@ -4,12 +4,13 @@
   "private": true,
   "scripts": {
     "start": "node app.js",
-    "test": "make test",
-    "test-w": "make test-w"
+    "test": "./node_modules/.bin/mocha"
   },
   "dependencies": {
     "express": "3.3.1",
-    "jade": "*",
+    "coffee-script" : "1.6.3"
+  },
+  "devDependencies": {
     "mocha" : "*",
     "supertest" : "0.7.1",
     "should" : "1.2.2"
