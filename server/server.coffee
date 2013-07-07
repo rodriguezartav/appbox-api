@@ -3,8 +3,6 @@
 Module dependencies.
 ###
 express = require("express")
-routes = require("./routes")
-user = require("./routes/user")
 http = require("http")
 path = require("path")
 app = express()
@@ -19,10 +17,9 @@ app.use app.router
 
 # development only
 app.use express.errorHandler()  if "development" is app.get("env")
-app.get "/", routes.index
-app.get "/users", user.list
-app.get "/test", "ok"
 
+app.get "/" , (req,res) ->
+  res.send 200
 
 http.createServer(app).listen app.get("port"), ->
   console.log "Express server listening on port " + app.get("port")
