@@ -1,4 +1,4 @@
-Hapi = require("hapi")
+Hapi = require("node-hapi")
 
 class Controller extends Hapi.ApiController
 

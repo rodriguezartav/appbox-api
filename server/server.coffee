@@ -7,7 +7,7 @@ path = require("path")
 app = express()
 
 
-Hapi = require("hapi")
+Hapi = require("node-hapi")
 
 # all environments
 app.set "port", process.env.PORT or 9012
@@ -27,8 +27,6 @@ app.get "/" , (req,res) ->
 
 Hapi.Util.LoadControllers.load( app, "#{__dirname}/controllers")
 Hapi.Util.LoadPolicies.load( app, "#{__dirname}/policies")
-
-console.log app.routes
 
 http.createServer(app).listen app.get("port"), ->
   console.log "Express server listening on port " + app.get("port")
